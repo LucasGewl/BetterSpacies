@@ -142,8 +142,9 @@ unsafe extern "C" fn wolf_specialairsend(agent: &mut L2CAgentBase) {
 }
 
 unsafe extern "C" fn wolf_speciallwstart(agent: &mut L2CAgentBase){
-    frame(agent.lua_state_agent, 1.0);
-    macros::FT_MOTION_RATE(agent, 0.14);
+    macros::FT_MOTION_RATE_RANGE(agent, 0.0, 7.0, 1.0);
+    // frame(agent.lua_state_agent, 1.0);
+    // macros::FT_MOTION_RATE(agent, 0.14);
 
     // frame(agent.lua_state_agent, 4.0);
     // macros::FT_MOTION_RATE(agent, 1.0);
@@ -152,7 +153,7 @@ unsafe extern "C" fn wolf_speciallwstart(agent: &mut L2CAgentBase){
     if macros::is_excute(agent){
         macros::ATTACK(agent,0, 0, Hash40::new("top"), 4.0, 65, 85, 0, 60, 9.0, 0.0, 7.0, 0.0, None, None, None, 0.2, 1.0, *ATTACK_SETOFF_KIND_OFF, *ATTACK_LR_CHECK_POS, false, 0, 0.0, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_elec"), *ATTACK_SOUND_LEVEL_L, *COLLISION_SOUND_ATTR_FIRE, *ATTACK_REGION_ENERGY);
         macros::ATK_SET_SHIELD_SETOFF_MUL(agent, 0, 0.1);
-        macros::FT_MOTION_RATE(agent, 1.0);
+        //macros::FT_MOTION_RATE(agent, 1.0);
     }
 
     frame(agent.lua_state_agent, 10.0);
@@ -164,16 +165,18 @@ unsafe extern "C" fn wolf_speciallwstart(agent: &mut L2CAgentBase){
 }
 
 unsafe extern "C" fn wolf_specialairlwstart(agent: &mut L2CAgentBase){
-    frame(agent.lua_state_agent, 1.0);
-    macros::FT_MOTION_RATE(agent, 0.14);
+    f macros::FT_MOTION_RATE_RANGE(agent, 0.0, 7.0, 1.0);
+    // frame(agent.lua_state_agent, 1.0);
+    // macros::FT_MOTION_RATE(agent, 0.14);
 
-    frame(agent.lua_state_agent, 6.0);
-    macros::FT_MOTION_RATE(agent, 1.0);
+    // frame(agent.lua_state_agent, 4.0);
+    // macros::FT_MOTION_RATE(agent, 1.0);
 
     frame(agent.lua_state_agent, 7.0);
     if macros::is_excute(agent){
-        macros::ATTACK(agent,0, 0, Hash40::new("top"), 4.0, 65, 85, 0, 60, 9.0, 0.0, 7.0, 0.0, None, None, None, 0.6, 1.0, *ATTACK_SETOFF_KIND_OFF, *ATTACK_LR_CHECK_POS, false, 0, 0.0, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_elec"), *ATTACK_SOUND_LEVEL_L, *COLLISION_SOUND_ATTR_FIRE, *ATTACK_REGION_ENERGY);
+        macros::ATTACK(agent,0, 0, Hash40::new("top"), 4.0, 65, 85, 0, 60, 9.0, 0.0, 7.0, 0.0, None, None, None, 0.2, 1.0, *ATTACK_SETOFF_KIND_OFF, *ATTACK_LR_CHECK_POS, false, 0, 0.0, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_elec"), *ATTACK_SOUND_LEVEL_L, *COLLISION_SOUND_ATTR_FIRE, *ATTACK_REGION_ENERGY);
         macros::ATK_SET_SHIELD_SETOFF_MUL(agent, 0, 0.1);
+        //macros::FT_MOTION_RATE(agent, 1.0);
     }
 
     frame(agent.lua_state_agent, 10.0);
